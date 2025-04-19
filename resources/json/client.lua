@@ -12,8 +12,8 @@ local function Drawer(id, table)
   Json[invokingResource][id] = json;
 
   SendNUIMessage({
-    type = "json",
-    json = {
+    action = "json",
+    data = {
       invokingResource = invokingResource,
       id = id,
       data = table,
@@ -36,6 +36,8 @@ end)
 
 local function toggleNuiFrame(shouldShow)
   SendReactMessage('setVisible', shouldShow)
+  SetNuiFocus(shouldShow, shouldShow)
+  SetNuiFocusKeepInput(shouldShow)
   visibility = shouldShow
 end
 
