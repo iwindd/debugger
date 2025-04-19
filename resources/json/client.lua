@@ -36,6 +36,16 @@ local function toggleNuiFrame(shouldShow)
   SetNuiFocus(shouldShow, shouldShow)
   SetNuiFocusKeepInput(shouldShow)
   visibility = shouldShow
+  if (visibility) then
+    CreateThread(function ()
+      while visibility do
+        Wait(0)
+        if (IsNuiFocused()) then
+          DisableAllControlActions(0);
+        end
+      end
+    end)
+  end
 end
 
 RegisterNUICallback('hideFrame', function(_, cb) toggleNuiFrame(false) cb({}) end)
