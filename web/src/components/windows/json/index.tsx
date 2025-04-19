@@ -133,7 +133,7 @@ const JsonViewer = () => {
                     <pre>
                       <JsonView
                         objectSortKeys={true}
-                        collapsed={2}
+                        collapsed={1}
                         value={data.data}
                         style={vscodeTheme}
                       />
