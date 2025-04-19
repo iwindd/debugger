@@ -61,10 +61,20 @@ const JsonViewer = () => {
     }
   });
 
-  useNuiEvent<string>("json:clear", (invokingResource) => {
-    setJsonData((prevData) =>
-      prevData.filter((data) => data.invokingResource !== invokingResource)
-    );
+  useNuiEvent<{
+    invokingResource?: string;
+    id?: string;
+  }>("json:clear", ({invokingResource, id}) => {
+    setJsonData((prevData) => {
+      if (invokingResource) {
+        return prevData.filter(
+          (data) => data.invokingResource !== invokingResource
+        );
+      } else if (id) {
+        return prevData.filter((data) => data.id !== id);
+      }
+      return prevData;
+    });
   });
 
   return (

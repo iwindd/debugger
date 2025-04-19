@@ -2,22 +2,31 @@ local Json = {};
 local visibility = false;
 
 ---@param id string
----@param table table
+---@param data table
 ---@param invokingResource? string
-local function Drawer(id, table, invokingResource)
+local function Drawer(id, data, invokingResource)
   invokingResource = invokingResource or GetInvokingResource() or "N/A";
   if (not Json[invokingResource]) then
     Json[invokingResource] = {};
   end
 
-  Json[invokingResource][id] = json;
+  Json[invokingResource][id] = data;
+
+  if (table.type(Json[invokingResource][id]) == 'empty') then
+    return SendNUIMessage({
+      action = "json:clear",
+      data = {
+        id = id,
+      }
+    })
+  end
 
   SendNUIMessage({
     action = "json",
     data = {
       invokingResource = invokingResource,
       id = id,
-      data = table,
+      data = Json[invokingResource][id],
     }
   })
 end
@@ -27,7 +36,9 @@ RegisterNetEvent("iDebugger.json:Drawer", Drawer)
 AddEventHandler("onResourceStop", function(resourceName)
   SendNUIMessage({
     action = "json:clear",
-    data = resourceName,
+    data = {
+      invokingResource = resourceName,
+    },
   })
 end)
 
