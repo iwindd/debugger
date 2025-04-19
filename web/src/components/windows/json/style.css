@@ -4,12 +4,28 @@
   width: 800px;
   height: 400px;
   color: white;
-  margin: 1em;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  resize: both;
+  position: absolute;
+  right: 1%;
+  top: 1%;
+}
+
+.json-viewer > header {
+  background-color: #1c1e24;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  padding: 0 0.5em;
+  margin: 0;
+}
+
+.json-viewer > main{
   display: grid;
   grid-template-columns: 1fr  2fr;
-  resize: vertical;
-  overflow: auto;
+  flex-grow: 1;
 }
 
 .json-categories {
@@ -107,6 +123,7 @@
   overflow-y: auto;
   width: 100%;
   flex-grow: 1;
+  text-align: center;
 }
 
 .json-data > article > ul{
@@ -114,7 +131,6 @@
   padding: 0;
   margin: 0;
   text-align: left;
-
 }
 
 .json-data > article > ul > li {

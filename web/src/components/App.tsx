@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
 import { debugData } from "../utils/debugData";
-import { fetchNui } from "../utils/fetchNui";
 import JsonViewer from "./windows/json";
 
 // This will set the NUI to visible if we are
@@ -10,11 +9,11 @@ debugData([
   {
     action: "setVisible",
     data: true,
-  }
+  },
 ]);
 
 debugData([
-  { 
+  {
     action: "json",
     data: [
       {
@@ -50,10 +49,9 @@ debugData([
           { id: 5, name: "Item 5", quantity: 1 },
         ],
       },
-    ]
-  }
-])
-
+    ],
+  },
+]);
 
 const App: React.FC = () => {
   return (

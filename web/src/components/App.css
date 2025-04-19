@@ -1,6 +1,5 @@
 .wrapper {
-  text-align: center;
-  height: 100%;
-  display: flex;
-  justify-content: flex-end;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
