@@ -1,0 +1,6 @@
+.wrapper {
+  text-align: center;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+}

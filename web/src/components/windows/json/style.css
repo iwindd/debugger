@@ -1,0 +1,123 @@
+.json-viewer {
+  background: #282c34;
+  border-radius: 3px;
+  width: 800px;
+  height: 400px;
+  color: white;
+  margin: 1em;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr  2fr;
+  resize: vertical;
+  overflow: auto;
+}
+
+.json-categories {
+  background: #1c1e24;
+  border-radius: 3px;
+  margin: 0.5em;
+  color: gray;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.json-data article::-webkit-scrollbar,
+.json-categories::-webkit-scrollbar {
+  width: 5px;
+  background: #1c1e24;
+}
+
+.json-data article::-webkit-scrollbar-thumb ,
+.json-categories::-webkit-scrollbar-thumb {
+  background: rgb(87, 94, 94);
+}
+
+.json-categories > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  border: 1px solid #3b4048;
+  border-top: 0;
+}
+
+.json-categories > ul > li {
+  border-top: 1px solid #3b4048;
+  padding: 0.2em;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.2em;
+}
+
+.json-data > article > ul > li:hover {
+  background: #3b4048;
+  color: white;
+  cursor: pointer;
+}
+
+.json-viewer ul > li:not(.selected) > span{ color: gray;}
+.json-viewer ul > li:not(.selected):hover {color: white;}
+.json-viewer ul > li.selected {
+  background: #3b4048;
+  color: white;
+  cursor: default;
+}
+.json-viewer ul > li:not(.selected) > pre {
+  display: none;
+}
+
+.json-viewer .json-data ul > li > header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.json-data {
+  background: #1c1e24;
+  padding: 0.5em;
+  border-radius: 3px;
+  margin: 0.5em;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.json-data > header{
+  font-size: 0.8em;
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
+  border-bottom: 1px solid #3b4048;
+  padding-bottom: 0.5em;
+}
+
+.json-data > header > input[type="text"] {
+  background: #14151a;
+  color: white;
+  border: none;
+  outline: none;
+  padding: 0.2em;
+  border-radius: 3px;
+}
+
+.json-data > article {
+  border-radius: 3px;
+  color: white;
+  overflow-y: auto;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.json-data > article > ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+
+}
+
+.json-data > article > ul > li {
+  border-bottom: 1px solid #3b4048;
+  padding: 0.2em;
+}
