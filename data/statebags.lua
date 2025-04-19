@@ -26,12 +26,17 @@ CreateThread(function ()
       states[stateId][key] = value;
     end
 
+    local function onUpdate()
+      lib.debugger.json(stateId, states[stateId], "StateBags");
+    end
+
     ---@diagnostic disable-next-line: param-type-mismatch
     AddStateBagChangeHandler(nil, stateId, function (stateBag, key, value)
       states[stateId][key] = value;
+      onUpdate();
     end)
 
-    lib.debugger.json(stateId, states[stateId], "StateBags");
+    onUpdate()
   end
 
   while true do
