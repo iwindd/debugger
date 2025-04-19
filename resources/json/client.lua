@@ -3,8 +3,9 @@ local visibility = false;
 
 ---@param id string
 ---@param table table
-local function Drawer(id, table)
-  local invokingResource = GetInvokingResource() or "N/A";
+---@param invokingResource? string
+local function Drawer(id, table, invokingResource)
+  invokingResource = invokingResource or GetInvokingResource() or "N/A";
   if (not Json[invokingResource]) then
     Json[invokingResource] = {};
   end
