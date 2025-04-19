@@ -1,4 +1,5 @@
 local Json = {};
+local visibility = false;
 
 ---@param id string
 ---@param table table
@@ -35,25 +36,15 @@ end)
 
 local function toggleNuiFrame(shouldShow)
   SendReactMessage('setVisible', shouldShow)
+  visibility = shouldShow
 end
 
-RegisterCommand('openJsonViewer', function() toggleNuiFrame(true) end)
-
+RegisterNUICallback('hideFrame', function(_, cb) toggleNuiFrame(false) cb({}) end)
 
 lib.addKeybind({
   name = "DEBUGGER:OPEN_JSON_VIER",
   description = "Toggle Cursor Debugger",
   defaultKey = "PAGEDOWN",
   defaultMapper = "keyboard",
-  onPressed = function ()  toggleNuiFrame(true) end,
+  onPressed = function ()  toggleNuiFrame(not visibility) end,
 })
-
-RegisterNUICallback('hideFrame', function(_, cb) toggleNuiFrame(false) cb({}) end)
-RegisterNUICallback('getClientData', function(data, cb)
-
--- Lets send back client coords to the React frame for use
-  local curCoords = GetEntityCoords(PlayerPedId())
-
-  local retData <const> = { x = curCoords.x, y = curCoords.y, z = curCoords.z }
-  cb(retData)
-end)
