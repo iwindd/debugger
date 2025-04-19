@@ -61,6 +61,12 @@ const JsonViewer = () => {
     }
   });
 
+  useNuiEvent<string>("json:clear", (invokingResource) => {
+    setJsonData((prevData) =>
+      prevData.filter((data) => data.invokingResource !== invokingResource)
+    );
+  });
+
   return (
     <div className="json-viewer">
       <div className="json-categories">

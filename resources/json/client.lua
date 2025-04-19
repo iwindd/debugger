@@ -24,14 +24,10 @@ end
 exports("Json", Drawer)
 RegisterNetEvent("iDebugger.json:Drawer", Drawer)
 AddEventHandler("onResourceStop", function(resourceName)
-  if (Json[resourceName]) then
-    Json[resourceName] = nil;
-
-    SendNUIMessage({
-      type = "json.clear",
-      header = resourceName,
-    })
-  end
+  SendNUIMessage({
+    action = "json:clear",
+    data = resourceName,
+  })
 end)
 
 local function toggleNuiFrame(shouldShow)
