@@ -22,14 +22,14 @@ interface JsonCategory {
 
 const AttachFinder = () => {
   const [model, setModel] = React.useState<string>("");
-  const [bone, setBone] = React.useState<string>(pedBones[0]);
+  const [bone, setBone] = React.useState<string>("SKEL_ROOT");
   const [offset, setOffset] = React.useState<{ x: number; y: number; z: number }>({ x: 0, y: 0, z: 0 });
   const [rotation, setRotation] = React.useState<{ x: number; y: number; z: number }>({ x: 0, y: 0, z: 0 });
   const [options, setOptions] = React.useState<{ softPin: boolean; collision: boolean; syncRot: boolean }>({ softPin: true, collision: true, syncRot: true });
 
   const onReset = () => {
     setModel("");
-    setBone(pedBones[0]);
+    setBone("SKEL_ROOT");
     setOffset({ x: 0, y: 0, z: 0 });
     setRotation({ x: 0, y: 0, z: 0 });
     setOptions({ softPin: true, collision: true, syncRot: true });
