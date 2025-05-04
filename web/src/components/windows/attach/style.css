@@ -1,0 +1,76 @@
+.attach-finder {
+  background: #282c34;
+  border-radius: 3px;
+  width: 800px;
+  height: 430px;
+  min-width: 800px;
+  min-height: 430px;
+  max-width: 100%; 
+  max-height: 100%; 
+  color: white;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 1%;
+  top: 2%;
+}
+
+.attach-finder > header {
+  background-color: #1c1e24;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  padding: 0 0.5em;
+  margin: 0;
+}
+
+.attach-finder > header > button{
+  background: none;
+  border: none;
+  color: gray;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 0.5em;
+}
+
+.attach-finder > header > button:active{
+  color: white;
+}
+
+.attach-finder > main {
+  padding: 1em;
+}
+
+.attach-finder > main > form > fieldset {
+  border: gray 1px solid;
+}
+
+.attach-finder > main > form input,
+.attach-finder > main > form select{
+  background-color: rgba(0, 0, 0, 0.158);
+  outline: none;
+  border: none;
+  padding: 0.5em;
+  color: white;
+}
+
+.attach-finder > main > form .data input,
+.attach-finder > main > form .data select{
+  margin-left: 0.5em;
+  margin-bottom: 0.1em;
+}
+
+.attach-finder > main > form .offset,
+.attach-finder > main > form .rotation {
+  display: flex; 
+}
+.attach-finder > main > form .offset input,
+.attach-finder > main > form .rotation input{
+  flex-grow: 1;
+  margin: 0 0.5em;
+}
+
+.attach-finder > main > form .options label{
+  display: block;
+}
