@@ -19,6 +19,9 @@ RegisterNUICallback('attachFinder', function(data, cb)
   offset.x = offset.x + 0.0;
   offset.y = offset.y + 0.0;
   offset.z = offset.z + 0.0;
+  rotation.x = rotation.x + 0.0;
+  rotation.y = rotation.y + 0.0;
+  rotation.z = rotation.z + 0.0;
 
   if (_object) then
     DeleteEntity(_object);
