@@ -43,7 +43,6 @@ RegisterNUICallback('attachFinder', function(data, cb)
   if (_object) then
     local boneIndex = GetPedBoneIndex(cache.ped, bone);
 
-    lib.print.info(offset, rotation)
     if (boneIndex ~= -1) then
       AttachEntityToEntity(
         _object,
@@ -55,11 +54,11 @@ RegisterNUICallback('attachFinder', function(data, cb)
         rotation.x,
         rotation.y,
         rotation.z,
+        true,
         options.softPin,
         options.collision,
-        false,
-        false,
-        2,
+        true,
+        1,
         options.syncRot
       );
     end
