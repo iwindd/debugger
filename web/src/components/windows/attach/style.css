@@ -64,6 +64,8 @@
 .attach-finder > main > form .offset,
 .attach-finder > main > form .rotation {
   display: flex; 
+  justify-content: space-between;
+
 }
 .attach-finder > main > form .offset input,
 .attach-finder > main > form .rotation input{

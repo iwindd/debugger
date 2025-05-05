@@ -7,6 +7,7 @@ import { useNuiEvent } from "../../../hooks/useNuiEvent";
 import Draggable from "react-draggable";
 import pedBones from "./pedBones";
 import { fetchNui } from "../../../utils/fetchNui";
+import NumberInput from "./components/์NumberInput";
 
 interface Json {
   invokingResource: string;
@@ -87,15 +88,15 @@ const AttachFinder = () => {
             </fieldset>
             <fieldset className="offset">
               <legend>Offset</legend>
-              <input type="number" placeholder="x" value={offset.x} onChange={(e) => setOffset(prev => ({...prev, x: +(e.target.value)}))} name="x" id="x" />
-              <input type="number" placeholder="y" value={offset.y} onChange={(e) => setOffset(prev => ({...prev, y: +(e.target.value)}))} name="y" id="y" />
-              <input type="number" placeholder="z" value={offset.z} onChange={(e) => setOffset(prev => ({...prev, z: +(e.target.value)}))} name="z" id="z" />
+              <NumberInput placeholder="x" step={0.1} value={offset.x} onChange={(e) => setOffset(prev => ({...prev, x: +(e.target.value)}))} name="x" id="x" />
+              <NumberInput placeholder="y" step={0.1} value={offset.y} onChange={(e) => setOffset(prev => ({...prev, y: +(e.target.value)}))} name="y" id="y" />
+              <NumberInput placeholder="z" step={0.1} value={offset.z} onChange={(e) => setOffset(prev => ({...prev, z: +(e.target.value)}))} name="z" id="z" />
             </fieldset>
             <fieldset className="rotation">
               <legend>Rotation</legend>
-              <input type="number" placeholder="x" value={rotation.x} onChange={(e) => setRotation(prev => ({...prev, x: +(e.target.value)}))} name="x" id="x" />
-              <input type="number" placeholder="y" value={rotation.y} onChange={(e) => setRotation(prev => ({...prev, y: +(e.target.value)}))} name="y" id="y" />
-              <input type="number" placeholder="z" value={rotation.z} onChange={(e) => setRotation(prev => ({...prev, z: +(e.target.value)}))} name="z" id="z" />
+              <NumberInput placeholder="x" step={0.1} value={rotation.x} onChange={(e) => setRotation(prev => ({...prev, x: +(e.target.value)}))} name="x" id="x" />
+              <NumberInput placeholder="y" step={0.1} value={rotation.y} onChange={(e) => setRotation(prev => ({...prev, y: +(e.target.value)}))} name="y" id="y" />
+              <NumberInput placeholder="z" step={0.1} value={rotation.z} onChange={(e) => setRotation(prev => ({...prev, z: +(e.target.value)}))} name="z" id="z" />
             </fieldset>
             <fieldset className="options">
               <legend>Options</legend>
