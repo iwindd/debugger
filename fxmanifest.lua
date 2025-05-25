@@ -18,6 +18,10 @@ client_scripts {
   "data/*.lua"
 }
 
+server_scripts {
+  "resources/**/server.lua",
+}
+
 files {
 	'web/build/index.html',
 	'web/build/**/*',
